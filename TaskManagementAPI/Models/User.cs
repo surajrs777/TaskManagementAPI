@@ -10,6 +10,6 @@
 
         // Navigation property
 
-        public ICollection<TaskItem> users { get; set; } = new List<TaskItem>();
+        public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
     }
 }
