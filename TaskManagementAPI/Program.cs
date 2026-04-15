@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using TaskManagementAPI.Data;
+using TaskManagementAPI.Services;
 
 namespace TaskManagementAPI
 {
@@ -19,6 +20,9 @@ namespace TaskManagementAPI
             // Add DbContext
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            // Register Auth Service
+            builder.Services.AddScoped<IAuthService, AuthService>();
 
             var app = builder.Build();
 
